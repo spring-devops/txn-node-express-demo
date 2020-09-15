@@ -44,7 +44,7 @@ App Description: A basic RESTful API Demo App
       - `node index.js`
       - _Note: Server will need to stopped and restarted for any changes to take effect_
 - **To View/Submit requests to the application**        
-  - Base address (assuming port 30001, shows **Welcome and Hello World** message only):
+  - Base address (assuming port 3001, shows **Welcome and Hello World** message only):
     - `http://localhost:3001`
   - A browser will only be able to GET the information at this location:
     - `http://localhost:3001/api/courses`
