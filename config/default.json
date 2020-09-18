@@ -1,0 +1,104 @@
+{
+    "appInfo": {
+        "comment": "This section holds only app name, type and other visible info about the app",
+        "appName": "CourseAPI",
+        "appTitleToUse": "Course Management API",
+        "appDescription": "A RESTful API for performing CRUD operations on courses"
+    },
+    "appHeaderInfo": {
+        "comment": "This section is to provide any header information that needs to be supplied with each response etc."
+    },
+    "appEnvConfig": {
+        "mailServer":{
+            "comment": "This section holds email specific information",
+            "host": "mail.server.host.name",
+            "port": "0000",
+            "protocol": "protocol to use, i.e. SMTP or a third party etc.",
+            "securityParamNames": "Comma or space separated values",
+            "securityParamSecretNames": "Comma or space separate secret env value names **DO NOT STORE SECRETS HERE**"
+        },
+        "dbServer":{
+            "comment": "This section holds database specific information",
+            "host": "db.server.host.name",
+            "port": "0000",
+            "protocol": "Protocol to use",
+            "securityParamNames": "Comma or space separated values",
+            "securityParamSecretNames": "Comma or space separate secret env value names **DO NOT STORE SECRETS HERE**"
+        },
+        "apiRouteConfig": {
+            "comment1": "This section holds all the routes that this app serves (rather than hard coding in the app)",
+            "comment2": "Since static components can be options and varying, those are in the Runtime Section below",
+            "routeApiPrefix": "/api",
+            "routeApiGet": "/courses",
+            "routeApiGetId": "/:id",
+            "routeAppGetIdCharsToRemove": "2"
+        },
+        "envNameList": {
+            "comment1": "App Environment values can be true/false or ON/OFF etc.",
+            "comment2": "App environment defaults names need not be changed, but if conflicts or other reasons, these can be made different",
+            "comment3": "All of these env settings can be set at the command line or via this file or passed in using env set or exports",
+            "appEnvOnValue": "ON",
+            "appEnvOffValue": "OFF",
+            "appDebugOnControl": "APP_DEBUG",
+            "appEmailControl": "APP_EMAIL",
+            "appEndPortControl": "APP_PORT"
+        }
+    },
+    "RuntimEnv" : {
+        "comment1": "All CAPS values can be set outside of this file as well and take precedence if set outside",
+        "envName": "Desktop",
+        "envDescription": "PC based Desktop enviroment",
+        "APP_EMAIL": "OFF",
+        "APP_DEBUG": "OFF",
+        "APP_PORT": "7001",
+        "runMorgan": "ON",
+        "runMorganParams": {
+            "descriptorSuffix": "Comment",
+            "stringSuffix": "String",
+            "currentUsed": "apacheCommon",
+            "tiny": "tiny",
+            "tinyComment": "Morgan -> Using Tiny Format -> :method :url :status :res[content-length] - :response-time ms",
+            "short": "short",
+            "shortComment": "Morgan -> Using Short Format -> :remote-addr :remote-user :method :url HTTP/:http-version :status :res[content-length] - :response-time ms",
+            "dev": "dev",
+            "devComment": "Morgan -> Using Dev Format -> :method :url :status :response-time ms - :res[content-length]",
+            "apacheCommon": "common",
+            "apacheCommonComment": "Morgan -> Using Apache Commons Format -> :remote-addr - :remote-user [:date[clf]] \":method :url HTTP/:http-version\" :status :res[content-length]",
+            "apacheCombine": "combined",
+            "apacheCombineComment": "Morgan -> Using Apache Combine Format -> :remote-addr - :remote-user [:date[clf]] \":method :url HTTP/:http-version\" :status :res[content-length] \":referrer\" \":user-agent\"",
+            "custom": "custom",
+            "customString": ":method :url HTTP/:http-version",
+            "customString123": ":remote-addr :remote-user :method :url HTTP/:http-version :status :res[content-length] - :response-time ms",
+            "customComment": "Morgan -> Using Custom Format -> :remote-addr :remote-user :method :url HTTP/:http-version :status :res[content-length] - :response-time ms"
+        },
+        "runHelmet": "ON",
+        "runUrlEncoder": "ON",
+        "runCustomMiddelware": "OFF",
+        "runCustomMiddelwareClassName": "Example - Placeholder",
+        "runtimeJSONMiddelware": "ON",
+        "runtimeAllowStaticFiles": "ON",
+        "runtimeStaticConfig": {
+            "comment1": "Multiple static configs can be added. Scanning stops at a missing number. Starts with 1",
+            "multiStaticConfigCount": "10",
+            "comment2": "The multiStaticConfigCount only needs a max number, it does not need to match the IDs used below",
+            "multiStaticConfig1":{
+                "mountPathInUrl": "/images",
+                "comment1": "In this example, url for static components is http://<yourserver>/images/...",
+                "mountPathAndDir": "./res/images",
+                "comment2": "In this example, the directory that holds all the static content (but this is not expressed in the URL)"
+            },
+            "multiStaticConfig2":{
+                "mountPathInUrl": "/resources",
+                "comment1": "In this example, url for static components is http://<yourserver>/resources/...",
+                "mountPathAndDir": "./res/css",
+                "comment2": "In this example, the directory that holds all the static content (but this is not expressed in the URL)"
+            },
+            "multiStaticConfig3":{
+                "mountPathInUrl": "",
+                "comment1": "In this example, url for static components is http://<yourserver>/...",
+                "mountPathAndDir": "./public",
+                "comment2": "In this example, the directory that holds all the static content (but this is not expressed in the URL)"
+            }
+        }
+    }
+}

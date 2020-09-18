@@ -1,0 +1,2 @@
+This is a test file: ./res/images/testurl.txt
+Intended url: /images/testurl.txt
